@@ -1,4 +1,4 @@
-import Artwork from "@/components/Artworklist";
+import Artwork from "@/components/Artwork";
 import useSWR from "swr";
 
 export default function HomePage() {
