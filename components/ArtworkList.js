@@ -5,7 +5,7 @@ export default function ArtworkList({ artist, title, artwork }) {
   return (
     <>
       <li>
-        <ArtworkPreview></ArtworkPreview>
+        <ArtworkPreview artist={artist} title={title} artwork={artwork}></ArtworkPreview>
       </li>
     </>
   );
