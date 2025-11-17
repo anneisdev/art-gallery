@@ -1,12 +1,16 @@
-import Image from "next/image";
 import ArtworkPreview from "./Artworkpreview";
+import Link from "next/link";
 
 export default function ArtworkList({ artist, title, artwork }) {
   return (
-    <>
-      <li>
-        <ArtworkPreview></ArtworkPreview>
-      </li>
-    </>
+    <li>
+      <Link href="/details">
+        <ArtworkPreview
+          artist={artist}
+          title={title}
+          artwork={artwork}
+        ></ArtworkPreview>
+      </Link>
+    </li>
   );
 }
