@@ -1,5 +1,6 @@
 import { SWRConfig } from "swr";
 import GlobalStyle from "../styles";
+import Layout from "@/components/Layout";
 
 export default function App({ Component, pageProps }) {
   async function fetcher(url) {
@@ -10,14 +11,16 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
-      <SWRConfig
-        value={{
-          fetcher,
-        }}
-      >
-        <GlobalStyle />
-        <Component {...pageProps} />
-      </SWRConfig>
+      <Layout>
+        <SWRConfig
+          value={{
+            fetcher,
+          }}
+        >
+          <GlobalStyle />
+          <Component {...pageProps} />
+        </SWRConfig>
+      </Layout>
     </>
   );
 }
