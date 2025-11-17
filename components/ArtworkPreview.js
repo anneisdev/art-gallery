@@ -1,9 +1,9 @@
 import Image from "next/image";
 
-export default function Artwork({ name, title, artwork }) {
+export default function ArtworkPreview({ artist, title, artwork }) {
   return (
     <>
-      <p>{name}</p>
+      <p>{artist}</p>
       <p>{title}</p>
       <Image src={artwork} alt={title} width={140} height={230}></Image>
     </>

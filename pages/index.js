@@ -1,22 +1,10 @@
-import Artwork from "@/components/Artwork";
+import ArtworkPreview from "@/components/Artworkpreview";
+import Spotlight from "@/components/Spotlight";
 import useSWR from "swr";
 
 export default function HomePage() {
-  async function fetcher(url) {
-    const response = await fetch(url);
-    const data = await response.json();
-
-    console.log(data);
-    if (!response.ok) {
-      throw error;
-    }
-
-    return data;
-  }
-
   const { data, error, isLoading } = useSWR(
-    `https://example-apis.vercel.app/api/art`,
-    fetcher
+    `https://example-apis.vercel.app/api/art`
   );
 
   if (isLoading) {
@@ -24,27 +12,25 @@ export default function HomePage() {
   }
 
   if (error) {
-    return <h1>{error.message}</h1>;
+    return <h1>{error}</h1>;
   }
 
-  console.log(data);
+  function getRandomArtwork() {
+    const index = Math.floor(Math.random() * data.length);
+
+    return data[index];
+  }
+
+  const randomArt = getRandomArtwork();
 
   return (
     <div>
       <h1>Hello from Next.js</h1>
-      <ul>
-        {data.map((artwork) => {
-          return (
-            <li key={artwork.slug}>
-              <Artwork
-                name={artwork.artist}
-                title={artwork.name}
-                artwork={artwork.imageSource}
-              ></Artwork>
-            </li>
-          );
-        })}
-      </ul>
+      <Spotlight
+        artist={randomArt.artist}
+        title={randomArt.name}
+        artwork={randomArt.imageSource}
+      />
     </div>
   );
 }
