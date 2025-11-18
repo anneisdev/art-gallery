@@ -2,8 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
 import { Colors } from "./Colors";
+import FavoriteButton from "./FavoriteButton";
 
-export function ArtworkDetails({ artwork }) {
+export function ArtworkDetails({ artwork, isFavorite, slug, onFavorite }) {
   return (
     <Main>
       <div>
@@ -14,6 +15,11 @@ export function ArtworkDetails({ artwork }) {
         alt={artwork.name}
         width={240}
         height={330}
+      />
+      <FavoriteButton
+        isFavorite={isFavorite}
+        slug={slug}
+        onClick={() => onFavorite(slug)}
       />
 
       <Colors artwork={artwork} colors={artwork.colors} />
