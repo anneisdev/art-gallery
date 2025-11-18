@@ -1,4 +1,3 @@
-import ArtworkPreview from "@/components/Artworkpreview";
 import Spotlight from "@/components/Spotlight";
 import useSWR from "swr";
 
