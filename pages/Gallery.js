@@ -16,7 +16,7 @@ export default function Gallery() {
 
   return (
     <div>
-      <ArtworkList artists={data} />
+      <ArtworkList artists={data}/>
     </div>
   );
 }

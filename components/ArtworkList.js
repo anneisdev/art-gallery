@@ -11,6 +11,7 @@ export default function ArtworkList({ artists }) {
                 artist={artwork.artist}
                 title={artwork.name}
                 artwork={artwork.imageSource}
+                slug={artwork.slug}
               />
             </li>
           );
