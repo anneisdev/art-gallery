@@ -14,6 +14,10 @@ export default function Gallery() {
     return <h1>{error}</h1>;
   }
 
+  function handleFavorite() {
+    console.log("favorite has been triggered");
+  }
+
   return (
     <div>
       <ul>
@@ -24,6 +28,7 @@ export default function Gallery() {
               artist={artwork.artist}
               title={artwork.name}
               artwork={artwork.imageSource}
+              onFavorite={handleFavorite}
             />
           );
         })}
