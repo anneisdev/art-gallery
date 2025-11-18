@@ -1,5 +1,4 @@
-import ArtworkPreview from "./artworkpreview2";
-
+import ArtworkPreview from "./ArtworkPreview";
 
 export default function ArtworkList({ artists }) {
   return (
