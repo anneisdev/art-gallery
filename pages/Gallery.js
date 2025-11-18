@@ -14,10 +14,6 @@ export default function Gallery() {
     return <h1>{error}</h1>;
   }
 
-  function handleFavorite() {
-    console.log("favorite has been triggered");
-  }
-
   return (
     <div>
       <ArtworkList artists={data} />
