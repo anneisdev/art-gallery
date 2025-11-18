@@ -4,15 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
 
-const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function ArtDetailPage() {
   const router = useRouter();
   const { slug } = router.query;
 
   const { data, error, isLoading } = useSWR(
-    `https://example-apis.vercel.app/api/art`,
-    fetcher
+    `https://example-apis.vercel.app/api/art`
   );
 
   if (!slug || isLoading || !data) {
@@ -40,6 +38,22 @@ export default function ArtDetailPage() {
         width={240}
         height={330}
       />
+
+<div style={{ display: "flex", gap: "10px" }}>
+    {artwork.colors.map((color) => (
+    <div
+      key={color}
+      style={{
+        display: "flex",
+        gap: "4rem", 
+        width: "30px",
+        height: "30px",
+        borderRadius: "50%",
+        backgroundColor: color,
+      }}
+    />
+  ))}
+  </div>
 
       <h3>{artwork.name}</h3>
       <h4>{artwork.artist}</h4>
