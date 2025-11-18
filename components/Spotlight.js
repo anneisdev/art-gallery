@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ArtworkPreview from "./ArtworkPreview";
 
 export default function Spotlight({
@@ -10,10 +11,7 @@ export default function Spotlight({
 }) {
   return (
     <>
-      <p>Artist: {artist}</p>
-      <p>Artwork name: {title}</p>
-      <Image src={artwork} alt={title} width={240} height={330}></Image>
-    </>
+
     <ArtworkPreview
       artist={artist}
       title={title}
@@ -22,5 +20,6 @@ export default function Spotlight({
       onFavorite={onFavorite}
       slug={slug}
     />
+        </>
   );
 }
