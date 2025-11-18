@@ -35,7 +35,7 @@ export default function HomePage({ favorites, onFavorite }) {
 
   return (
     <div>
-      <h1>Hello from Next.js</h1>
+      <h1>Welcome to our Art Gallery 🎨</h1>
       <Spotlight
         artist={randomArt.artist}
         title={randomArt.name}
