@@ -3,9 +3,7 @@ import Link from "next/link";
 import styled from "styled-components";
 import { Colors } from "./Colors";
 
-
-export function ArtworkDetails({ artwork}) {
-
+export function ArtworkDetails({ artwork }) {
   return (
     <Main>
       <div>
@@ -18,15 +16,13 @@ export function ArtworkDetails({ artwork}) {
         height={330}
       />
 
-      <Colors artwork={artwork} colors={artwork.colors}/>
-
+      <Colors artwork={artwork} colors={artwork.colors} />
 
       <h3>{artwork.name}</h3>
       <h4>{artwork.artist}</h4>
 
       <p>Genre: {artwork.genre}</p>
       <p>Year: {artwork.year}</p>
-
     </Main>
   );
 }

@@ -2,8 +2,6 @@ import { ArtworkDetails } from "@/components/ArtworkDetails";
 import { useRouter } from "next/router";
 import useSWR from "swr";
 
-
-
 export default function ArtDetailPage() {
   const router = useRouter();
   const { slug } = router.query;
@@ -26,10 +24,5 @@ export default function ArtDetailPage() {
     return <h1>Artwork not found</h1>;
   }
 
-  return (
-
-
-<ArtworkDetails artwork={artwork} colors={artwork.colors}/>
-  );
+  return <ArtworkDetails artwork={artwork} colors={artwork.colors} />;
 }
-
