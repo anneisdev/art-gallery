@@ -2,7 +2,17 @@ import Image from "next/image";
 import Link from "next/link";
 import FavoriteButton from "./FavoriteButton";
 
-export default function ArtworkPreview({ artist, title, artwork }) {
+export default function ArtworkPreview({
+  artist,
+  title,
+  artwork,
+  favorites = [],
+  onFavorite,
+  slug,
+}) {
+  const isFavorite = favorites.find((favSlug) => favSlug === slug)
+    ? true
+    : false;
   return (
     <>
       <p>{artist}</p>
@@ -10,7 +20,11 @@ export default function ArtworkPreview({ artist, title, artwork }) {
       <Link href="/details">
         <Image src={artwork} alt={title} width={140} height={230}></Image>
       </Link>
-      <FavoriteButton />
+      <FavoriteButton
+        isFavorite={isFavorite}
+        slug={slug}
+        onClick={() => onFavorite(slug)}
+      />
     </>
   );
 }
