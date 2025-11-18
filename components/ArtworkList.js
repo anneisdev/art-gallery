@@ -1,15 +1,23 @@
-import ArtworkPreview from "./ArtworkPreview";
+import ArtworkPreview from "./Artworkpreview";
 
-export default function ArtworkList({ artist, title, artwork }) {
+
+export default function ArtworkList({ artists }) {
   return (
-    <>
-      <li>
-        <ArtworkPreview
-          artist={artist}
-          title={title}
-          artwork={artwork}
-        ></ArtworkPreview>
-      </li>
-    </>
+<>
+
+      <ul>
+        {artists.map((artwork) => {
+          return (
+            <li key={artwork.slug}>
+              <ArtworkPreview 
+              artist={artwork.artist}
+              title={artwork.name}
+              artwork={artwork.imageSource}
+               />
+            </li>
+          );
+        })}
+      </ul>
+</>
   );
 }
