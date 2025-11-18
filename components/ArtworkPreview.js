@@ -13,7 +13,7 @@ export default function ArtworkPreview({
   const isFavorite = favorites.find((favSlug) => favSlug === slug)
     ? true
     : false;
-export default function ArtworkPreview({ artist, title, artwork, slug }) {
+
   return (
     <>
       <p>{artist}</p>
