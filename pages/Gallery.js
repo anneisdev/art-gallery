@@ -1,4 +1,4 @@
-import ArtworkList from "@/components/artworklist2";
+import ArtworkList from "@/components/ArtworkList";
 import useSWR from "swr";
 
 export default function Gallery() {
