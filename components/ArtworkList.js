@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ArtworkPreview from "./Artworkpreview";
+import ArtworkPreview from "./artworkpreview2";
 
 export default function ArtworkList({ artist, title, artwork }) {
   return (
