@@ -1,8 +1,7 @@
+import { ArtworkDetails } from "@/components/ArtworkDetails";
 import { useRouter } from "next/router";
 import useSWR from "swr";
-import Image from "next/image";
-import Link from "next/link";
-import styled from "styled-components";
+
 
 
 export default function ArtDetailPage() {
@@ -28,48 +27,9 @@ export default function ArtDetailPage() {
   }
 
   return (
-    <Main>
-      <div>
-      <StyledLink href="/Gallery">🔙</StyledLink>
-</div>
-      <Image
-        src={artwork.imageSource}
-        alt={artwork.name}
-        width={240}
-        height={330}
-      />
 
-<div style={{ display: "flex", gap: "10px" }}>
-    {artwork.colors.map((color) => (
-    <div
-      key={color}
-      style={{
-        display: "flex",
-        gap: "4rem", 
-        width: "30px",
-        height: "30px",
-        borderRadius: "50%",
-        backgroundColor: color,
-      }}
-    />
-  ))}
-  </div>
 
-      <h3>{artwork.name}</h3>
-      <h4>{artwork.artist}</h4>
-
-      <p>Genre: {artwork.genre}</p>
-      <p>Year: {artwork.year}</p>
-    </Main>
+<ArtworkDetails artwork={artwork} colors={artwork.colors}/>
   );
 }
-
-const StyledLink = styled(Link)`
-  text-decoration: none;
-  font-size: 2.5rem;
-`;
-
-const Main = styled.main`
-  margin: 1rem;
-`;
 
