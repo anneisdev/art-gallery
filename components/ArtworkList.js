@@ -1,4 +1,5 @@
 import ArtworkPreview from "./ArtworkPreview";
+import styled from "styled-components";
 
 export default function ArtworkList({ artists, favorites, onFavorite }) {
   return (
@@ -6,7 +7,7 @@ export default function ArtworkList({ artists, favorites, onFavorite }) {
       <ul>
         {artists.map((artwork) => {
           return (
-            <li key={artwork.slug}>
+            <Li key={artwork.slug}>
               <ArtworkPreview
                 artist={artwork.artist}
                 title={artwork.name}
@@ -15,10 +16,15 @@ export default function ArtworkList({ artists, favorites, onFavorite }) {
                 favorites={favorites}
                 onFavorite={onFavorite}
               />
-            </li>
+            </Li>
           );
         })}
       </ul>
     </>
   );
 }
+
+
+const Li = styled.li`
+list-style: none
+`
