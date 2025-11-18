@@ -1,13 +1,14 @@
 import Image from "next/image";
-import FavoriteButton from "./FavoriteButton";
+import Link from "next/link";
 
-export default function ArtworkPreview({ artist, title, artwork, onFavorite }) {
+export default function ArtworkPreview({ artist, title, artwork }) {
   return (
     <>
       <p>{artist}</p>
       <p>{title}</p>
-      <Image src={artwork} alt={title} width={140} height={230}></Image>
-      <FavoriteButton onFavorite={onFavorite}></FavoriteButton>
+      <Link href="/details">
+        <Image src={artwork} alt={title} width={140} height={230}></Image>
+      </Link>
     </>
   );
 }

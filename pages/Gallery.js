@@ -20,19 +20,7 @@ export default function Gallery() {
 
   return (
     <div>
-      <ul>
-        {data.map((artwork) => {
-          return (
-            <ArtworkList
-              key={artwork.slug}
-              artist={artwork.artist}
-              title={artwork.name}
-              artwork={artwork.imageSource}
-              onFavorite={handleFavorite}
-            />
-          );
-        })}
-      </ul>
+      <ArtworkList artists={data} />
     </div>
   );
 }
