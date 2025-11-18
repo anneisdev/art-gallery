@@ -1,4 +1,5 @@
 import ArtworkPreview from "./ArtworkPreview";
+import styled from "styled-components";
 
 export default function ArtworkList({ artists }) {
   return (
@@ -6,17 +7,22 @@ export default function ArtworkList({ artists }) {
       <ul>
         {artists.map((artwork) => {
           return (
-            <li key={artwork.slug}>
+            <Li key={artwork.slug}>
               <ArtworkPreview
                 artist={artwork.artist}
                 title={artwork.name}
                 artwork={artwork.imageSource}
                 slug={artwork.slug}
               />
-            </li>
+            </Li>
           );
         })}
       </ul>
     </>
   );
 }
+
+
+const Li = styled.li`
+list-style: none
+`
