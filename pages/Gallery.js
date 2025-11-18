@@ -1,4 +1,4 @@
-import ArtworkList from "@/components/ArtworkList";
+import ArtworkList from "@/components/artworklist1";
 import useSWR from "swr";
 
 export default function Gallery() {
@@ -16,7 +16,7 @@ export default function Gallery() {
 
   return (
     <div>
-<ArtworkList artists={data}/>
+      <ArtworkList artists={data} />
     </div>
   );
 }
