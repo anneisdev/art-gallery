@@ -1,7 +1,7 @@
 import ArtworkList from "@/components/ArtworkList";
 import useSWR from "swr";
 
-export default function Gallery() {
+export default function Gallery({ favorites, onFavorite }) {
   const { data, error, isLoading } = useSWR(
     `https://example-apis.vercel.app/api/art`
   );
@@ -16,7 +16,11 @@ export default function Gallery() {
 
   return (
     <div>
-      <ArtworkList artists={data}/>
+      <ArtworkList
+        artists={data}
+        favorites={favorites}
+        onFavorite={onFavorite}
+      />
     </div>
   );
 }

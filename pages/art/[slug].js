@@ -2,7 +2,7 @@ import { ArtworkDetails } from "@/components/ArtworkDetails";
 import { useRouter } from "next/router";
 import useSWR from "swr";
 
-export default function ArtDetailPage() {
+export default function ArtDetailPage({ favorites, onFavorite }) {
   const router = useRouter();
   const { slug } = router.query;
 
@@ -24,5 +24,17 @@ export default function ArtDetailPage() {
     return <h1>Artwork not found</h1>;
   }
 
-  return <ArtworkDetails artwork={artwork} colors={artwork.colors} />;
+  const isFavorite = favorites.find((favSlug) => favSlug === slug)
+    ? true
+    : false;
+
+  return (
+    <ArtworkDetails
+      artwork={artwork}
+      colors={artwork.colors}
+      isFavorite={isFavorite}
+      slug={slug}
+      onFavorite={onFavorite}
+    />
+  );
 }

@@ -10,6 +10,7 @@ export default function Layout({ children }) {
       <Nav>
       <StyledLink href="/">Spotlight</StyledLink>
       <StyledLink href="/Gallery">Gallery</StyledLink>
+     <StyledLink href="/favorites">Favorites</Link>
       </Nav>
 </Container>
 

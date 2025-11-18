@@ -1,7 +1,7 @@
 import ArtworkPreview from "./ArtworkPreview";
 import styled from "styled-components";
 
-export default function ArtworkList({ artists }) {
+export default function ArtworkList({ artists, favorites, onFavorite }) {
   return (
     <>
       <ul>
@@ -13,6 +13,8 @@ export default function ArtworkList({ artists }) {
                 title={artwork.name}
                 artwork={artwork.imageSource}
                 slug={artwork.slug}
+                favorites={favorites}
+                onFavorite={onFavorite}
               />
             </Li>
           );
