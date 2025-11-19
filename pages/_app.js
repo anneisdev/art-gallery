@@ -12,10 +12,10 @@ export default function App({ Component, pageProps }) {
     return data;
   }
 
-  function handleFavoriteArtwork(slug) {
-    const currentArtwork = favorites.find((favSlug) => favSlug === slug);
+  function handleToggleFavorite(slug) {
+    const isFavorite = favorites.find((favSlug) => favSlug === slug);
 
-    if (currentArtwork) {
+    if (isFavorite) {
       setFavorites(favorites.filter((favSlug) => favSlug !== slug));
     } else {
       setFavorites([...favorites, slug]);
@@ -34,7 +34,7 @@ export default function App({ Component, pageProps }) {
           <Component
             {...pageProps}
             favorites={favorites}
-            onFavorite={handleFavoriteArtwork}
+            onFavorite={handleToggleFavorite}
           />
         </SWRConfig>
       </Layout>

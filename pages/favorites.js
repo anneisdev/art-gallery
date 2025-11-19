@@ -14,7 +14,7 @@ export default function FavoritesPage({ favorites, onFavorite }) {
   }
 
   if (error) {
-    return <h1>{error}</h1>;
+    return <h1>{error.message}</h1>;
   }
 
   const favoritedArtworks = artworks.filter((artwork) =>
@@ -23,7 +23,7 @@ export default function FavoritesPage({ favorites, onFavorite }) {
 
   return (
     <div>
-      {favoritedArtworks.length === 0 && <h1>Hello from Next.js</h1>}
+      {favoritedArtworks.length === 0 && <h1>No favorited artworks yet</h1>}
       <ul>
         {favoritedArtworks.map((artwork) => {
           return (
@@ -45,5 +45,5 @@ export default function FavoritesPage({ favorites, onFavorite }) {
 }
 
 const Li = styled.li`
-list-style: none
-`
+  list-style: none;
+`;
