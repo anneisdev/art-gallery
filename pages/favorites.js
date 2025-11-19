@@ -1,3 +1,4 @@
+import ArtworkList from "@/components/ArtworkList";
 import ArtworkPreview from "@/components/ArtworkPreview";
 import styled from "styled-components";
 import useSWR from "swr";
@@ -24,26 +25,11 @@ export default function FavoritesPage({ favorites, onFavorite }) {
   return (
     <div>
       {favoritedArtworks.length === 0 && <h1>No favorited artworks yet</h1>}
-      <ul>
-        {favoritedArtworks.map((artwork) => {
-          return (
-            <Li key={artwork.slug}>
-              <ArtworkPreview
-                artist={artwork.artist}
-                title={artwork.name}
-                artwork={artwork.imageSource}
-                slug={artwork.slug}
-                favorites={favorites}
-                onFavorite={onFavorite}
-              />
-            </Li>
-          );
-        })}
-      </ul>
+      <ArtworkList
+        artworks={favoritedArtworks}
+        favorites={favorites}
+        onFavorite={onFavorite}
+      />
     </div>
   );
 }
-
-const Li = styled.li`
-  list-style: none;
-`;

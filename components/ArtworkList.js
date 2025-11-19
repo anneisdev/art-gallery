@@ -1,11 +1,11 @@
 import ArtworkPreview from "./ArtworkPreview";
 import styled from "styled-components";
 
-export default function ArtworkList({ artists, favorites, onFavorite }) {
+export default function ArtworkList({ artworks, favorites, onFavorite }) {
   return (
     <>
       <Ul>
-        {artists.map((artwork) => {
+        {artworks.map((artwork) => {
           return (
             <Li key={artwork.slug}>
               <ArtworkPreview
