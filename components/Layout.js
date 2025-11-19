@@ -5,7 +5,7 @@ import styled, { css } from "styled-components";
 export default function Layout({ children }) {
   const router = useRouter();
   return (
-    <Container>
+<>
       <ChildWrapper>
 
       {children}
@@ -25,7 +25,7 @@ export default function Layout({ children }) {
           Favorites
         </StyledLink>
       </Nav>
-    </Container>
+</>
   );
 }
 
@@ -56,11 +56,7 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-`;
+
 
 const ChildWrapper = styled.div`
   height: calc(100dvh - 3rem);
