@@ -1,4 +1,3 @@
-import Image from "next/image";
 import ArtworkPreview from "./ArtworkPreview";
 
 export default function Spotlight({

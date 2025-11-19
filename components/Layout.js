@@ -1,42 +1,68 @@
 import Link from "next/link";
-import styled from "styled-components";
-
+import { useRouter } from "next/router";
+import styled, { css } from "styled-components";
 
 export default function Layout({ children }) {
+  const router = useRouter();
   return (
+    <Container>
+      <ChildWrapper>
 
-<Container>
-      <main>{children}</main>
+      {children}
+      </ChildWrapper>
+
       <Nav>
-      <StyledLink href="/">Spotlight</StyledLink>
-      <StyledLink href="/Gallery">Gallery</StyledLink>
-     <StyledLink href="/favorites">Favorites</StyledLink>
+        <StyledLink href="/" isActive={router.pathname === "/"}>
+          Spotlight
+        </StyledLink>
+        <StyledLink href="/Gallery" isActive={router.pathname === "/Gallery"}>
+          Gallery
+        </StyledLink>
+        <StyledLink
+          href="/favorites"
+          isActive={router.pathname === "/favorites"}
+        >
+          Favorites
+        </StyledLink>
       </Nav>
-</Container>
-
+    </Container>
   );
 }
 
 const Nav = styled.nav`
-position: fixed;
+  position: fixed;
   bottom: 0;
   width: 100%;
   display: flex;
   background-color: #f0f0f0;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  height: 3rem;
 `;
 
 const StyledLink = styled(Link)`
-text-decoration: none;
-  flex: 1; 
-  text-align: center; 
-  padding: 1rem; 
+  text-decoration: none;
+  flex: 1;
+  text-align: center;
+  padding: 1rem;
   color: black;
+  ${(props) =>
+    props.isActive &&
+    css`
+      background-color: #9c9c9c;
+      color: white;
+    `}
   &:hover {
-background-color: #9c9c9c;}
+    background-color: #c0c0c0;
+  }
 `;
 
 const Container = styled.div`
-display: flex;
-justify-content: center;
-`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+`;
+
+const ChildWrapper = styled.div`
+  height: calc(100dvh - 3rem);
+  overflow: scroll;
+`;

@@ -4,7 +4,7 @@ import styled from "styled-components";
 export default function ArtworkList({ artists, favorites, onFavorite }) {
   return (
     <>
-      <ul>
+      <Ul>
         {artists.map((artwork) => {
           return (
             <Li key={artwork.slug}>
@@ -19,7 +19,7 @@ export default function ArtworkList({ artists, favorites, onFavorite }) {
             </Li>
           );
         })}
-      </ul>
+      </Ul>
     </>
   );
 }
@@ -27,4 +27,10 @@ export default function ArtworkList({ artists, favorites, onFavorite }) {
 
 const Li = styled.li`
 list-style: none
+`
+
+const Ul = styled.ul`
+display: flex;
+flex-wrap: wrap;
+gap: 2rem;
 `
