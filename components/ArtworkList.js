@@ -32,5 +32,5 @@ list-style: none
 const Ul = styled.ul`
 display: flex;
 flex-wrap: wrap;
-gap: 2rem;
+gap: 6rem;
 `

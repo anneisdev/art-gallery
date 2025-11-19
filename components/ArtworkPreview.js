@@ -17,16 +17,19 @@ export default function ArtworkPreview({
 
   return (
     <>
-      <h2>{artist}</h2>
-      <P>{title}</P>
-      <Link href={`/art/${slug}`}>
-        <Image src={artwork} alt={title} width={240} height={330}></Image>
-      </Link>
-      <FavoriteButton
+      <h2>
+        {artist}             
+        <FavoriteButton
         isFavorite={isFavorite}
         slug={slug}
         onClick={() => onFavorite(slug)}
       />
+      </h2>
+
+      <P>{title}</P>
+      <Link href={`/art/${slug}`}>
+        <Image src={artwork} alt={title} width={240} height={330}></Image>
+      </Link>
     </>
   );
 }
