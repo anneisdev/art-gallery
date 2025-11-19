@@ -48,11 +48,11 @@ const StyledLink = styled(Link)`
   ${(props) =>
     props.isActive &&
     css`
-      background-color: #9c9c9c;
+      background-color: #c0c0c0;
       color: white;
     `}
   &:hover {
-    background-color: #c0c0c0;
+    background-color: #9c9c9c;
   }
 `;
 
