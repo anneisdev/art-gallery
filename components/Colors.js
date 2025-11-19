@@ -6,9 +6,8 @@ export function Colors({ colors }) {
           key={color}
           style={{
             display: "flex",
-            gap: "4rem",
-            width: "30px",
-            height: "30px",
+            width: "40px",
+            height: "40px",
             borderRadius: "50%",
             backgroundColor: color,
           }}
