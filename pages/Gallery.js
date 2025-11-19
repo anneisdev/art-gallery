@@ -17,7 +17,7 @@ export default function Gallery({ favorites, onFavorite }) {
   return (
     <div>
       <ArtworkList
-        artists={data}
+        artworks={data}
         favorites={favorites}
         onFavorite={onFavorite}
       />

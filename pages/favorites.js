@@ -1,3 +1,4 @@
+import ArtworkList from "@/components/ArtworkList";
 import ArtworkPreview from "@/components/ArtworkPreview";
 import styled from "styled-components";
 import useSWR from "swr";
@@ -14,7 +15,7 @@ export default function FavoritesPage({ favorites, onFavorite }) {
   }
 
   if (error) {
-    return <h1>{error}</h1>;
+    return <h1>{error.message}</h1>;
   }
 
   const favoritedArtworks = artworks.filter((artwork) =>
@@ -50,10 +51,12 @@ export default function FavoritesPage({ favorites, onFavorite }) {
           );
         })}
       </ul>
+      {favoritedArtworks.length === 0 && <h1>No favorited artworks yet</h1>}
+      <ArtworkList
+        artworks={favoritedArtworks}
+        favorites={favorites}
+        onFavorite={onFavorite}
+      />
     </div>
   );
 }
-
-const Li = styled.li`
-list-style: none
-`
