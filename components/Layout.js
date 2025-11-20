@@ -61,4 +61,5 @@ const StyledLink = styled(Link)`
 const ChildWrapper = styled.div`
   height: calc(100dvh - 3rem);
   overflow: scroll;
+  margin-left: 2rem;
 `;

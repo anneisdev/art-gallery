@@ -1,4 +1,5 @@
 import { ArtworkDetails } from "@/components/ArtworkDetails";
+import CommentInput from "@/components/Comment";
 import { useRouter } from "next/router";
 import useSWR from "swr";
 
@@ -29,6 +30,7 @@ export default function ArtDetailPage({ favorites, onFavorite }) {
     : false;
 
   return (
+        <>
     <ArtworkDetails
       artwork={artwork}
       colors={artwork.colors}
@@ -36,5 +38,7 @@ export default function ArtDetailPage({ favorites, onFavorite }) {
       slug={slug}
       onFavorite={onFavorite}
     />
+    <CommentInput></CommentInput>
+    </>
   );
 }

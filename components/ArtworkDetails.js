@@ -6,7 +6,7 @@ import FavoriteButton from "./FavoriteButton";
 
 export function ArtworkDetails({ artwork, isFavorite, slug, onFavorite }) {
   return (
-    <Main>
+    <main>
       <div>
         <StyledLink href="/Gallery">🔙</StyledLink>
       </div>
@@ -29,7 +29,7 @@ export function ArtworkDetails({ artwork, isFavorite, slug, onFavorite }) {
 
       <p>Genre: {artwork.genre}</p>
       <p>Year: {artwork.year}</p>
-    </Main>
+    </main>
   );
 }
 
@@ -38,6 +38,4 @@ const StyledLink = styled(Link)`
   font-size: 2.5rem;
 `;
 
-const Main = styled.main`
-  margin: 1rem;
-`;
+
