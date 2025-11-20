@@ -1,10 +1,12 @@
 import { SWRConfig } from "swr";
 import GlobalStyle from "../styles";
 import Layout from "@/components/Layout";
-import { useState } from "react";
+import useLocalStorageState from "use-local-storage-state";
 
 export default function App({ Component, pageProps }) {
-  const [favorites, setFavorites] = useState([]);
+  const [favorites, setFavorites] = useLocalStorageState("favorites", {
+    defaultValue: [],
+  });
 
   async function fetcher(url) {
     const response = await fetch(url);
